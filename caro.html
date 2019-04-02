@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<button value="Change Value" onclick="changValue()">Change Value</button>
+<script>
+    let arr = [];
+    let data = "";
+
+    for (let i = 0; i <5;i++){
+        arr[i] = new Array(0,0,0,0,0);
+    }
+
+    for (let i = 0; i < 5; i++){
+        data = data + "<br/>";
+        for (let j = 0; j < 5;j++){
+            data = data + arr[i][j] + "&nbsp;&nbsp;";
+        }
+    } document.getElementById("demo").innerHTML = data;
+
+    function changValue () {
+        let x = parseInt(prompt('x ='));
+        let y = parseInt(prompt('y ='));
+        arr[x][y] = "x";
+        let data1 = "";
+        for (let i = 0; i < 5; i++) {
+            data1 = data1 + "<br/>";
+            for (let j = 0; j < 5; j++) {
+                data1 = data1 + arr[i][j] + "&nbsp;&nbsp;";
+            }
+        }
+        document.getElementById("demo").innerHTML = data1;
+    }
+</script>
+</body>
+</html>
